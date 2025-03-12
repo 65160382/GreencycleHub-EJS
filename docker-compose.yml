@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  node-server: 
+    container_name: Nodejs # ตั้งชื่อ container
+    build: . # ตั้งตำแหน่ง Dockerfile
+    ports:
+      - "3000:3000" # map port 3000 ให้เปิดให้ภายนอกเข้าถึง
+    volumes:
+      - .:/usr/src/app # แมปโฟลเดอร์โค้ดในเครื่องเข้ากับ container
+      - /usr/src/app/node_modules # กันไม่ให้แมป node_modules ของ local
+    environment:
+       # กำหนด host ของ MySQL 
+      DB_HOST: db
+      # กำหนด user ของ MySQL
+      DB_USER: ${DB_USER}
+      # กำหนด password ของ MySQL
+      DB_PASSWORD: ${DB_PASSWORD}
+      # กำหนดชื่อฐานข้อมูล 
+      DB_NAME: ${DB_NAME}
+    # depends_on คือการระบุว่าเซอร์วิส webapp ต้องรอให้เซอร์วิส mysql ทำงานเสร็จก่อน
+    depends_on:
+      # ระบุเซอร์วิสที่ต้องรอ
+      - db
+    command: sh -c "sleep 10 && nodemon app.js" # เพิ่มการหน่วงเวลา 10 วินาทีก่อนรัน nodemon
+
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} # กำหนด user ของ root mysql
+      MYSQL_DATABASE: ${MYSQL_DATABASE} # กำหนด database เริ่มต้นของ mysql
+      MYSQL_USER: ${MYSQL_USER} # เพิ่ม user ตรงนี้
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD} # เพิ่ม password ตรงนี้
+    ports: 
+      - "3306:3306"
+    volumes:
+      # กำหนดชื่อ volume ว่า mysql_data และเก็บไว้ที่ /var/lib/mysql 
+      - mysql_data:/var/lib/mysql #map path ภายในไว้กับ volume
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db # ระบุ host ที่จะให้ phpmyadmin ไปจัดการ ซึ่งสามารถใส่เป็นชื่อ container name (db) ได้เลย
+      PMA_PORT: 3306 # ระบุ port ของ Database
+      PMA_USER: ${PMA_USER} # ระบุ user ของ Database
+      PMA_PASSWORD: ${PMA_PASSWORD} # ระบุ password ของ Database
+    ports:
+      - "8080:80"
+    depends_on:
+      - db # ระบุว่า phpmyadmin ขึ้นหลังจาก db 
+    
+
+volumes:
+  mysql_data: # เก็บข้อมูลไว้ใน volumes mysql_data
