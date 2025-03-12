@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ------header------ */
+
+.nav-bar{
+    display: flex;
+    background-color: #F3F3F3;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%; /* ทำให้ Navbar กว้างเต็มหน้าจอ */
+    text-decoration: none; /* ลบเส้นใต้ของ link */
+    /* gap: 1rem; */
+    padding: 0 2.5rem; /* ปรับ padding */
+    
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    /* flex: 1; */
+}
+
+.nav-logo h1{
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #191A23;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    flex-grow: 2; /*ขยายพื้นที่ให้ nav-item */
+}
+
+.nav-item a{
+    text-decoration: none; /* ลบเส้นใต้ของ link */
+    margin: 0 10px;
+    color: black;
+}
+
+.nav-item a:hover{
+    background-color: #B9FF66;
+    border-radius: 10px;
+    padding: 5px;    
+}
+
+.nav-icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    margin-left: auto; /* ดัน nav-icon ไปชิดขวา */
+}
+
+.icon{
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    margin-bottom: 5px;
+    display: flex; 
+}
+
+.nav-icon a{
+    text-decoration: none; /* ลบเส้นใต้ของ link */
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    margin-top: 5px;
+    color: black;
+} 
+
+/* ------content------ */
+.content{
+    display:flex; 
+    flex: 1; /* ใช้เพื่อให้ element ขยายตัวให้เต็มพื้นที่ที่เหลือภายใน Flex Container */
+    align-items: center;
+    flex-direction: column;
+} 
+
+.content-row {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 40px; /* เพิ่มระยะห่างระหว่าง .content-text และ .img-circle */
+}
+
+.img-content{
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* ป้องกันภาพบิดเบี้ยว */
+}
+
+.content-text h1{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.content-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* จัดวางเนื้อหาในแนวแกนหลักให้อยู่ด้านซ้าย */
+    text-align: left; /* จัดข้อความให้อยู่ด้านซ้าย */
+    max-width: 600px;
+}
+
+.img-circle{
+    display: flex;
+    border-radius: 50%;
+    width: 200px;  
+    height: 200px; 
+    object-fit: cover; /* ป้องกันภาพบิดเบี้ยว */
+}
+
+.content-button a {
+    text-decoration: none; /* ลบเส้นใต้ของ link */
+}
+
+.content-button {
+    display: flex;
+    gap: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+}
+
+.content-button button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.content-button .login{
+    background-color: #B9FF66;
+    color: black;
+}
+
+.content-button .login:hover{
+    background-color: #95fc17;
+    color: black;
+}
+
+.content-button .register{
+    background-color: #191A23;
+    color: white;
+}
+
+.quantity-waste {
+    /* flex-direction: row; */
+    margin-top: 40px;
+    width: 100%;
+    padding: 30px;
+}
+
+.quantity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    background: linear-gradient(to right, #5AF3A7, #B9FF66);
+    height: auto;
+    padding: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 20px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+}
+
+.quantity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* เพิ่มระยะห่างระหว่าง h1 และ img */
+}
+
+.quantity-digitals {
+    display: flex;
+    /* align-items: center; */
+    align-items: end;
+    gap: 10px;
+}
+
+.digitals {
+    display: flex;
+    gap: 10px;
+}
+
+.digitals span {
+    font-size: 40px;
+    font-weight: bold;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 40px;
+    /* align-items: end; */
+    /* text-align: center; */
+}
+
+.quantity-digitals .unit {
+    font-weight: bold;
+    font-size: 24px;
+    /* align-items: end; */
+}
+
+.img-card {
+    transform: scaleX(-1);
+    width: 150px;
+    height: auto;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+}
+
+.progress-bar {
+    width: 50%;
+    height: 30px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 20%; /* ปรับ % ตามปริมาณขยะ */
+    background: #0D51A9;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+    position: relative;
+}
+
+.goal {
+    font-size: 16px;
+    color: black;
+}
+
+.img-progress {
+    position: absolute;
+    top: 50%;
+    left: 20%; /* ตำแหน่งเดียวกับ width ของ progress-fill */
+    transform: translate(-50%, -50%);
+    width: 33px;
+    height: 33px;
+}
+
+/*----------card--------------*/
+.waste-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 20px;
+    /* background: #f3f3f3; */
+    border-radius: 10px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-radius: 20px;
+    background: #191A23;
+    box-shadow: 5px 5px 5px rgba(83, 83, 83, 0.767);
+    margin-right: 20px;
+    margin-left: 20px;
+    gap: 30px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    /* mix-blend-mode: multiply; */
+    background: transparent;
+}
+
+.card p{
+    /* background-color: #B9FF66; */
+    background-color: #FFFFFF;
+    /* color: white; */
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+
+.card p1{
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.card a{
+    text-decoration: none;
+    padding: 10px;
+    color:  #B9FF66;
+}
+
+/* Footer content  */
+.footer {
+    background-color: #191A23;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-social a img {
+    width: 30px;
+    margin: 5px;
+    transition: transform 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+
+
+
+

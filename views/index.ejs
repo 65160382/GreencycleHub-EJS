@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <%- include('partials/header') %>
+         <!-- content -->
+        <div class="content">
+            <img class="img-content" src="https://www.uarm.edu.pe/wp-content/uploads/2024/05/nota-reciclar.jpg" alt="recycle-img">
+            <div class="content-row">
+                <div class="content-text">
+                    <h1>"ขยะของคุณมีค่า!🌍♻️"</h1>
+                    <p>อย่าปล่อยให้ขยะกลายเป็นภาระต่อโลก มาร่วมกันรีไซเคิลเพื่อสิ่งแวดล้อมที่ดีขึ้น</p>
+                    <p>เปลี่ยนขยะให้เป็นแต้มสะสมและแลกของรางวัลต่างๆมากมายได้ที่นี่!</p>
+                    <div class="content-button">
+                        <a href="/login">
+                            <button class="login" type="button">เข้าสู่ระบบ</button>
+                        </a>      
+                        <a href="/register" >
+                            <button class="register" type="button">ลงทะเบียน</button>
+                        </a> 
+                    </div>
+                </div>
+                <img class="img-circle" src="https://static.thairath.co.th/media/Dtbezn3nNUxytg04ajY5FY6LrRmAAcVkqkVMMPvLlMpwSo.jpg" alt="recycle-img">
+            </div>
+            <div class="quantity-waste">
+                <div class="quantity-card">
+                    
+                    <div class="quantity-container">
+                        <h1>ปริมาณขยะที่ทั้งระบบเก็บได้</h1>
+                        <img class="img-card" src="https://cdn-icons-png.flaticon.com/512/7787/7787330.png" alt="recycle-truck">                
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="quantity-digitals">
+                            <div class="digitals">
+                                <span>0</span>
+                                <span>0</span>
+                                <span>0</span>
+                                <span>0</span>
+                                <span>2</span>
+                                <span>5</span>
+                            </div>
+                            <span class="unit">kg</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                            <img class="img-progress" src="https://cdn-icons-png.flaticon.com/128/3820/3820785.png" alt="recycle-progress">
+                        </div>
+                        <p class="goal">เป้าหมาย 100,000 กิโลกรัม</p>
+                    </div>
+                </div>   
+            </div>
+            
+            <div class="waste-card">
+                <!-- loop ได้ตรงนี้ ทำฐานข้อมูลใน database แล้วเอามาแสดง -->
+                <div class="card">  
+                    <div class="card-content">
+                        <p>ขวดน้ำใส PET</p>
+                        <p1>ปริมาณ 5 กิโลกรัม</p1>
+                        <a href="/">ดูรายละเอียด</a>
+                    </div>
+                    <img src="/images/bottle_pet.png.png" alt="">
+                </div>
+                
+                <div class="card">  
+                    <div class="card-content">
+                        <p>กระป๋องอะลูมิเนียม</p>
+                        <p1>ปริมาณ 5 กิโลกรัม</p1>
+                        <a href="/">ดูรายละเอียด</a>
+                    </div>
+                    <img src="/images/can.png.png" alt="">
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Footer content -->
+        <%- include('partials/footer') %>
+</body>
+</html>
