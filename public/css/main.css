@@ -22,9 +22,7 @@ body {
     height: 80px;
     width: 100%; /* ทำให้ Navbar กว้างเต็มหน้าจอ */
     text-decoration: none; /* ลบเส้นใต้ของ link */
-    /* gap: 1rem; */
     padding: 0 2.5rem; /* ปรับ padding */
-    
 }
 
 .nav-logo{
@@ -59,31 +57,33 @@ body {
     padding: 5px;    
 }
 
-.nav-icon{
+.nav-icon {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: center;
+    flex-direction: row; /* จัดเรียงไอคอนและข้อความในแนวนอน */
     flex: 1;
-    margin-left: auto; /* ดัน nav-icon ไปชิดขวา */
 }
 
-.icon{
-    height: 23px;
+.nav-icon button {
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 23px;
-    margin-bottom: 5px;
-    display: flex; 
-}
-
-.nav-icon a{
-    text-decoration: none; /* ลบเส้นใต้ของ link */
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    margin-top: 5px;
+    flex-direction: column; /* จัดเรียงไอคอนและข้อความในแนวตั้ง */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* ปรับขนาดตัวหนังสือ */
     color: black;
-} 
+    margin: 0 10px;
+}
+
+.nav-icon img {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 3px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
+}
+
 
 /* ------content------ */
 .content{
@@ -288,10 +288,16 @@ body {
     padding: 20px;
     border-radius: 20px;
     background: #191A23;
-    box-shadow: 5px 5px 5px rgba(83, 83, 83, 0.767);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
     margin-right: 20px;
     margin-left: 20px;
     gap: 30px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-content{
@@ -332,6 +338,10 @@ body {
     text-decoration: none;
     padding: 10px;
     color:  #B9FF66;
+}
+
+.card a:hover{
+    color: #95fc17;
 }
 
 /* Footer content  */
