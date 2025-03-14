@@ -8,7 +8,6 @@ services:
       - "3000:3000" # map port 3000 ให้เปิดให้ภายนอกเข้าถึง
     volumes:
       - .:/usr/src/app # แมปโฟลเดอร์โค้ดในเครื่องเข้ากับ container
-      - /usr/src/app/node_modules # กันไม่ให้แมป node_modules ของ local
     environment:
        # กำหนด host ของ MySQL 
       DB_HOST: db
@@ -22,7 +21,7 @@ services:
     depends_on:
       # ระบุเซอร์วิสที่ต้องรอ
       - db
-    command: sh -c "sleep 10 && nodemon app.js" # เพิ่มการหน่วงเวลา 10 วินาทีก่อนรัน nodemon
+    command: sh -c "sleep 10 && nodemon --watch . index.js" # เพิ่มการหน่วงเวลา 10 วินาทีก่อนรัน nodemon
 
   db:
     image: mysql:latest

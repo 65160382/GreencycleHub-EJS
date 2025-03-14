@@ -10,15 +10,10 @@ app.set('views',path.join(__dirname,'views')); //อ้างอิง views ท
 
 app.use(express.static(path.join(__dirname,'public'))); //อ้างอิงไฟล์ static ใน floder public
 app.use(express.urlencoded({extended:true}));
-
+app.use(express.json()); // เพิ่มการตั้งค่าเพื่อรับข้อมูล JSON จาก body ของ request
 
 // ใช้ router
-app.use(router);
-
-/* test แบบเก่า
-app.get('/',(req,res)=>{
-    res.send('Hello Worlds')
-});*/
+app.use('/', router);
 
 app.listen(port,()=>{
     console.log(`Server is runing at http://localhost:${port}`)

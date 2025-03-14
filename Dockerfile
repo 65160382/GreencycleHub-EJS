@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 3000
 
 # รันแอปด้วย nodemon เพื่อ hot-reloading
-CMD [ "nodemon", "app.js" ]
+CMD [ "nodemon", "index.js" ]

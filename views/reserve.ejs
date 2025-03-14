@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/slidebar.css">
+    <link rel="stylesheet" href="/css/reserve.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <%- include('partials/header') %>
+    </header>
+    <%- include('partials/slidebar') %>
+
+        <div id="main" class="content">
+            <div class="previous-butt">
+                <a href="/">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2722/2722991.png" alt="back">
+                    <span>ย้อนกลับ</span>
+                </a>             
+            </div>
+
+            <div class="title">
+                <h2>จองคิวรับซื้อขยะ</h2>
+            </div>
+
+            <form action="/reserve" method="post">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label>ชื่อจริง</label>
+                        <input type="text" name="firstname" placeholder="ชื่อจริง">
+                    </div>
+                    <div class="form-group">
+                        <label>นามสกุล</label>
+                        <input type="text" name="lastname" placeholder="นามสกุล">
+                    </div>
+                    <div class="form-group">
+                        <label>เบอร์โทรศัพท์</label>
+                        <input type="text" name="phone" placeholder="เบอร์โทรศัพท์">
+                    </div>
+                    <div class="form-group">
+                        <label>วันที่ต้องการจอง</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>ที่อยู่</label>
+                        <input type="text" name="address" placeholder="ที่อยู่">
+                    </div>
+                    <div class="form-group">
+                        <label>ประเภทขยะ</label>
+                        <select name="recycle_type" required>
+                            <option value="">เลือกประเภทขยะ</option> <!--ค่าเริ่มต้นตอนยังไม่ได้เลือกอะไร-->
+                            <!--type กำหนดขึ้นมาเพื่อแทนแต่ละข้อมูลในอาเรย์-->
+                            <% recycletype.forEach(function(type){ %> 
+                                <option value="<%=type.id%>"><%= type.recycle_name %> </option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>พิกัด GPS</label>
+                        <input type="text" name="gps" placeholder="พิกัด GPS">
+                    </div>
+                    <div class="form-group">
+                        <label>จำนวนขยะที่ต้องการขาย</label>
+                        <input type="text"> กิโลกรัม
+                    </div>          
+                    <div class="form-group">
+                        <label>อัปโหลดรูปภาพขยะ</label>
+                        <input type="file">
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                </div>
+                <div class="submit-butt">
+                    <button type="submit">ยืนยันการจอง</button>
+                </div>
+            </form>
+        </div>     
+    <footer class="footer">
+        <%- include('partials/footer') %>
+    </footer>
+    <%- include('partials/overlay') %>
+    <script src="/js/slidebar.js"></script>
+</body>
+</html>

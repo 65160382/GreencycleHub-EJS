@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <diV class="container">
+        <div class="login-content">
+            <div class="login-form">
+                <div class="login-title">
+                    <h1>GreencycleHub</h1>
+                </div>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="email">อีเมล</label>
+                        <input type="email" name="email" id="email" placeholder="อีเมล" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">รหัสผ่าน</label>
+                        <input type="password" name="password" id="password" placeholder="รหัสผ่าน" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="remember">
+                        <input type="checkbox" name="remember" id="remember"> จดจำฉัน
+                        </label>
+                    </div> -->
+                    <div class="form-group">
+                        <button type="submit">เข้าสู่ระบบ</button>
+                    </div>
+                </form>
+                <div class="social-login">
+                    <p>หรือเข้าสู่ระบบด้วย</p>
+                    <button class="social-btn google-btn">
+                        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Icon">
+                        เข้าสู่ระบบด้วย Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook Icon">
+                        เข้าสู่ระบบด้วย Facebook
+                    </button>
+                </div>
+                <div class="register-link">
+                    <p>หากยังไม่มีบัญชี <a href="/register">สร้างบัญชี</a></p>
+                </div>
+            </div>
+            <div class="login-picture">
+                <img src="https://woodly.com/wp-content/uploads/2021/10/shutterstock_1658616850-min-scaled.jpg" alt="pic">
+            </div>
+        </div>
+    </diV>
+</body>
+</html>

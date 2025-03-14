@@ -1,0 +1,82 @@
+.previous-butt {
+    display: flex;
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    justify-content: flex-start; /* ชิดซ้ายภายใน div */
+    cursor: pointer;
+    width: 100%; /* ให้ div ขยายเต็มพื้นที่ */
+}
+
+.previous-butt img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px; /* เพิ่มระยะห่างระหว่างไอคอนกับข้อความ */
+}
+
+.previous-butt a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black; /* ป้องกันลิงก์เป็นสีน้ำเงิน */
+    display: flex;
+    align-items: center; /* จัดข้อความให้อยู่ตรงกับรูปภาพ */
+}
+
+.form-container{
+    display: flex;
+    flex-wrap: wrap; /* ให้ฟอร์มสามารถห่อหุ้มได้ */
+    /* align-items: center; */
+    justify-content: center;
+    gap: 15px; /* เพิ่มระยะห่างระหว่างองค์ประกอบในฟอร์ม */
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row; /* จัดเรียง label และ input ในแนวตั้ง */
+    align-items: flex-start;
+    gap: 10px; /* เพิ่มระยะห่างระหว่าง label และ input */
+    flex-shrink: 1; /* ให้ฟิลด์ยุบลงเมื่อพื้นที่ไม่พอ */
+    flex-basis: 40%;
+    margin-left: 10px;
+}
+
+.form-group label {
+    font-size: 16px;
+    width: 150px; /* กำหนดความกว้างของ label */
+}
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="date"], .form-group select{
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* font-size: 16px; */
+}
+
+.submit-butt {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.submit-butt button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #B9FF66;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: black;
+    cursor: pointer; 
+}
+
+.submit-butt button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+

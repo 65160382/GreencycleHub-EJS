@@ -90,6 +90,7 @@ body {
     display:flex; 
     flex: 1; /* ใช้เพื่อให้ element ขยายตัวให้เต็มพื้นที่ที่เหลือภายใน Flex Container */
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 } 
 
